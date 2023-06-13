@@ -5,8 +5,8 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: black; /* Set background color to black */
-  color: white; /* Set text color to white */
+  background-color: #282c34;
+  color: black;
 `;
 
 const HeaderName = styled.h1`
@@ -19,7 +19,7 @@ const Navigation = styled.nav`
 
 const NavButton = styled.button`
   margin-right: 20px;
-  color: white; /* Set text color to white */
+  color: black;
   text-decoration: none;
   background: none;
   border: none;
@@ -54,8 +54,8 @@ const ProjectDescription = styled.p`
 const Footer = styled.footer`
   padding: 10px;
   text-align: center;
-  background-color: black; /* Set background color to black */
-  color: white; /* Set text color to white */
+  background-color: #282c34;
+  color: black;
 `;
 
 const HomePage = () => {
@@ -91,7 +91,7 @@ const HomePage = () => {
       </ProjectPreview>
 
       <Footer>
-        © {new Date().getFullYear()} Jake Bodin. All rights reserved.
+        Â© {new Date().getFullYear()} Jake. All rights reserved.
       </Footer>
     </div>
   );
