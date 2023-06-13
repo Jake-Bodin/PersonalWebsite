@@ -5,8 +5,8 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #282c34;
-  color: black;
+  background-color: black;
+  color: white;
 `;
 
 const HeaderName = styled.h1`
@@ -19,7 +19,7 @@ const Navigation = styled.nav`
 
 const NavButton = styled.button`
   margin-right: 20px;
-  color: black;
+  color: white;
   text-decoration: none;
   background: none;
   border: none;
@@ -54,8 +54,8 @@ const ProjectDescription = styled.p`
 const Footer = styled.footer`
   padding: 10px;
   text-align: center;
-  background-color: #282c34;
-  color: black;
+  background-color: black;
+  color: white;
 `;
 
 const HomePage = () => {
@@ -91,7 +91,7 @@ const HomePage = () => {
       </ProjectPreview>
 
       <Footer>
-        Â© {new Date().getFullYear()} Jake. All rights reserved.
+        © {new Date().getFullYear()} Jake. All rights reserved.
       </Footer>
     </div>
   );
