@@ -59,7 +59,7 @@ const Footer = styled.footer`
 `;
 
 const HomePage = () => {
-  const randomImage = "https://nypost.com/wp-content/uploads/sites/2/2015/01/petergriffin1.jpg?quality=75&strip=all"; // fetches a random image from Unsplash
+  const randomImage = "https://nypost.com/wp-content/uploads/sites/2/2015/01/petergriffin1.jpg?quality=75&strip=all&t=" + Date.now();
 
   return (
     <div>
