@@ -5,8 +5,8 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: white; /* Change background color to white */
-  color: black; /* Change text color to black */
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white */
 `;
 
 const HeaderName = styled.h1`
@@ -19,7 +19,7 @@ const Navigation = styled.nav`
 
 const NavButton = styled.button`
   margin-right: 20px;
-  color: black; /* Change text color to black */
+  color: white; /* Set text color to white */
   text-decoration: none;
   background: none;
   border: none;
@@ -54,8 +54,8 @@ const ProjectDescription = styled.p`
 const Footer = styled.footer`
   padding: 10px;
   text-align: center;
-  background-color: white; /* Change background color to white */
-  color: black; /* Change text color to black */
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white */
 `;
 
 const HomePage = () => {
