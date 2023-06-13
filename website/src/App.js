@@ -5,7 +5,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: black;
+  background-color: #282c34;
   color: white;
 `;
 
@@ -54,7 +54,7 @@ const ProjectDescription = styled.p`
 const Footer = styled.footer`
   padding: 10px;
   text-align: center;
-  background-color: black;
+  background-color: #282c34;
   color: white;
 `;
 
@@ -91,7 +91,7 @@ const HomePage = () => {
       </ProjectPreview>
 
       <Footer>
-        © {new Date().getFullYear()} Jake. All rights reserved.
+        Â© {new Date().getFullYear()} Your Name. All rights reserved.
       </Footer>
     </div>
   );
