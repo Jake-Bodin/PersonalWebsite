@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import randomImage from '../src/photos/starclouds.jpg';
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #282c34 !important; /* Added !important */
+  background-color: #282c34;
   color: white;
 `;
 
@@ -54,12 +55,11 @@ const ProjectDescription = styled.p`
 const Footer = styled.footer`
   padding: 10px;
   text-align: center;
-  background-color: #282c34 !important; /* Added !important */
+  background-color: #282c34;
   color: white;
 `;
 
 const HomePage = () => {
-  const randomImage = "https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"; // fetches an image from Unsplash
 
   return (
     <div>
@@ -73,26 +73,27 @@ const HomePage = () => {
         </Navigation>
       </Header>
 
-      <MainImage src={randomImage} alt="Random" />
+      <MainImage src={randomImage} alt="Random"/>
 
       <ProjectPreview>
         <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 1" />
+          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 1"/>
           <ProjectDescription>Project 1: A short description of the project goes here.</ProjectDescription>
         </ProjectCard>
         <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 2" />
+          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 2"/>
           <ProjectDescription>Project 2: A short description of the project goes here.</ProjectDescription>
         </ProjectCard>
         <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 3" />
+          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 3"/>
           <ProjectDescription>Project 3: A short description of the project goes here.</ProjectDescription>
         </ProjectCard>
       </ProjectPreview>
 
       <Footer>
-        © {new Date().getFullYear()} Your Name. All rights reserved.
+        Â© {new Date().getFullYear()} Your Name. All rights reserved.
       </Footer>
+       <style>{`body { background-color: #282c34; }`}</style>
     </div>
   );
 };
