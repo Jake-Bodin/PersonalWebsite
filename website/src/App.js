@@ -91,7 +91,7 @@ const HomePage = () => {
       </ProjectPreview>
 
       <Footer>
-        Â© {new Date().getFullYear()} Your Name. All rights reserved.
+        Â© {new Date().getFullYear()} Jake Bodin. All rights reserved.
       </Footer>
        <style>{`body { background-color: #282c34; }`}</style>
     </div>
