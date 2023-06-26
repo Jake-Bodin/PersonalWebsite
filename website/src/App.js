@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import randomImage from '../src/photos/starclouds.jpg';
+import About from '../src/pages/AboutPage.js';
+import Projects from '../src/pages/ProjectsPage.js';
+import Experience from '../src/pages/ExpierencePage.js';
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 10px;
   background-color: #282c34;
-  color: white;
+  color: red;
 `;
 
 const HeaderName = styled.h1`
@@ -20,7 +23,7 @@ const Navigation = styled.nav`
 
 const NavButton = styled.button`
   margin-right: 20px;
-  color: white;
+  color: ${({ isActive }) => (isActive ? 'blue' : 'white')};
   text-decoration: none;
   background: none;
   border: none;
@@ -60,40 +63,84 @@ const Footer = styled.footer`
 `;
 
 const HomePage = () => {
+  const [activeButton, setActiveButton] = useState('home');
+
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
 
   return (
     <div>
       <Header>
         <HeaderName>Jake Bodin</HeaderName>
         <Navigation>
-          <NavButton>Home</NavButton>
-          <NavButton>About Me</NavButton>
-          <NavButton>Projects</NavButton>
-          <NavButton>Experience</NavButton>
+          <NavButton
+            isActive={activeButton === 'home'}
+            onClick={() => handleButtonClick('home')}
+          >
+            Home
+          </NavButton>
+          <NavButton
+            isActive={activeButton === 'about'}
+            onClick={() => handleButtonClick('about')}
+          >
+            About Me
+          </NavButton>
+          <NavButton
+            isActive={activeButton === 'projects'}
+            onClick={() => handleButtonClick('projects')}
+          >
+            Projects
+          </NavButton>
+          <NavButton
+            isActive={activeButton === 'experience'}
+            onClick={() => handleButtonClick('experience')}
+          >
+            Experience
+          </NavButton>
         </Navigation>
       </Header>
 
-      <MainImage src={randomImage} alt="Random"/>
+      {activeButton === 'home' && (
+        <>
+          <MainImage src={randomImage} alt="Random" />
 
-      <ProjectPreview>
-        <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 1"/>
-          <ProjectDescription>Project 1: A short description of the project goes here.</ProjectDescription>
-        </ProjectCard>
-        <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 2"/>
-          <ProjectDescription>Project 2: A short description of the project goes here.</ProjectDescription>
-        </ProjectCard>
-        <ProjectCard>
-          <ProjectImage src="https://source.unsplash.com/random?coding" alt="Project 3"/>
-          <ProjectDescription>Project 3: A short description of the project goes here.</ProjectDescription>
-        </ProjectCard>
-      </ProjectPreview>
+          <ProjectPreview>
+            <ProjectCard>
+              <ProjectImage
+                src="https://source.unsplash.com/random?coding"
+                alt="Project 1"
+              />
+              <ProjectDescription>
+                Project 1: A short description of the project goes here.
+              </ProjectDescription>
+            </ProjectCard>
+            <ProjectCard>
+              <ProjectImage
+                src="https://source.unsplash.com/random?coding"
+                alt="Project 2"
+              />
+              <ProjectDescription>
+                Project 2: A short description of the project goes here.
+              </ProjectDescription>
+            </ProjectCard>
+            <ProjectCard>
+              <ProjectImage
+                src="https://source.unsplash.com/random?coding"
+                alt="Project 3"
+              />
+              <ProjectDescription>
+                Project 3: A short description of the project goes here.
+              </ProjectDescription>
+            </ProjectCard>
+          </ProjectPreview>
 
-      <Footer>
-        Â© {new Date().getFullYear()} Jake Bodin. All rights reserved.
-      </Footer>
-       <style>{`body { background-color: #282c34; }`}</style>
+          <Footer>
+            © {new Date().getFullYear()} Jake Bodin. All rights reserved.
+          </Footer>
+          <style>{`body { background-color: #282c34; }`}</style>
+        </>
+      )}
     </div>
   );
 };
