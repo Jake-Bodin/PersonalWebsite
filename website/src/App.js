@@ -23,7 +23,7 @@ const Navigation = styled.nav`
 
 const NavButton = styled.button`
   margin-right: 20px;
-  color: ${({ isActive }) => (isActive ? 'blue' : 'white')};
+  color: ${({ isActive }) => (isActive ? 'red' : 'white')};
   text-decoration: none;
   background: none;
   border: none;
@@ -102,45 +102,47 @@ const HomePage = () => {
       </Header>
 
       {activeButton === 'home' && (
-        <>
-          <MainImage src={randomImage} alt="Random" />
+  <React.Fragment>
+    <MainImage src={randomImage} alt="Random" />
 
-          <ProjectPreview>
-            <ProjectCard>
-              <ProjectImage
-                src="https://source.unsplash.com/random?coding"
-                alt="Project 1"
-              />
-              <ProjectDescription>
-                Project 1: A short description of the project goes here.
-              </ProjectDescription>
-            </ProjectCard>
-            <ProjectCard>
-              <ProjectImage
-                src="https://source.unsplash.com/random?coding"
-                alt="Project 2"
-              />
-              <ProjectDescription>
-                Project 2: A short description of the project goes here.
-              </ProjectDescription>
-            </ProjectCard>
-            <ProjectCard>
-              <ProjectImage
-                src="https://source.unsplash.com/random?coding"
-                alt="Project 3"
-              />
-              <ProjectDescription>
-                Project 3: A short description of the project goes here.
-              </ProjectDescription>
-            </ProjectCard>
-          </ProjectPreview>
+    <ProjectPreview>
+      <ProjectCard>
+        <ProjectImage
+          src="https://source.unsplash.com/random?coding"
+          alt="Project 1"
+        />
+        <ProjectDescription>
+          Project 1: A short description of the project goes here.
+        </ProjectDescription>
+      </ProjectCard>
+      <ProjectCard>
+        <ProjectImage
+          src="https://source.unsplash.com/random?coding"
+          alt="Project 2"
+        />
+        <ProjectDescription>
+          Project 2: A short description of the project goes here.
+        </ProjectDescription>
+      </ProjectCard>
+      <ProjectCard>
+        <ProjectImage
+          src="https://source.unsplash.com/random?coding"
+          alt="Project 3"
+        />
+        <ProjectDescription>
+          Project 3: A short description of the project goes here.
+        </ProjectDescription>
+      </ProjectCard>
+    </ProjectPreview>
 
-          <Footer>
-            © {new Date().getFullYear()} Jake Bodin. All rights reserved.
-          </Footer>
-          <style>{`body { background-color: #282c34; }`}</style>
-        </>
-      )}
+    <Footer>
+      © {new Date().getFullYear()} Jake Bodin. All rights reserved.
+    </Footer>
+    <style>{`body { background-color: #282c34; }`}</style>
+  </React.Fragment>
+)}
+
+
     </div>
   );
 };
