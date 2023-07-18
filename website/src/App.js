@@ -6,7 +6,20 @@ import About from './pages/AboutPage';
 import Projects from './pages/ProjectsPage';
 import Experience from './pages/ExpierencePage';
 import randomImage from './photos/starclouds.jpg';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #282c34; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+`;
 
 const MainImage = styled.img`
   width: 100%;
@@ -22,6 +35,7 @@ const HomePageText = styled.div`
 const HomePage = () => {
   return (
     <Router>
+      <GlobalStyle />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,7 +53,7 @@ const Home = () => {
     <div>
       <MainImage src={randomImage} alt="Random" />
       <HomePageText>
-      <h1>Welcome to the Home Page!</h1>
+      <h1>Welcome to My Website!</h1>
       </HomePageText>
     </div>
   );
