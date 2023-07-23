@@ -30,9 +30,7 @@ const AboutPage = () => {
       <ProfileImage src={profilePic} alt="Profile" />
       <h2>About Me</h2>
       <p>
-        Hello, my name is Jake Bodin. I am majoring in Computer Science while also minoring in Econcomics 
-         at Rensselaer Polytechnic Institute, class of 2025. I am currently creating this website as apart 
-         of the RCOS prjoect group How2Website, where each of us are learning to create are own website.
+        Expierence
       </p>
       <h3>Skills:</h3>
       <ul>

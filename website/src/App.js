@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import About from './pages/AboutPage';
-import Projects from './pages/ProjectsPage';
 import Experience from './pages/ExpierencePage';
+import Contacts from './pages/ContactsPage';
 import randomImage from './photos/starclouds.jpg';
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -40,8 +40,8 @@ const HomePage = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <Footer />
     </Router>
