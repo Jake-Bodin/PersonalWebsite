@@ -3,27 +3,27 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const data = [
   {
-    link: 'https://github.com/mldangelo',
+    link: 'https://github.com/Jake-Bodin',
     label: 'Github',
     icon: faGithub,
   },
   {
-    link: 'https://www.instagram.com/dangelosaurus/',
+    link: 'https://www.instagram.com/jake_bodin/',
     label: 'Instagram',
     icon: faInstagram,
   },
   {
-    link: 'https://www.linkedin.com/in/michaelldangelo',
+    link: 'https://www.linkedin.com/in/jakebodin/',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },
   {
-    link: 'https://twitter.com/dangelosaurus',
+    link: 'https://twitter.com/jbodin88/',
     label: 'Twitter',
     icon: faTwitter,
   },
   {
-    link: 'mailto:michael.l.dangelo@gmail.com',
+    link: 'mailto:jakebodin@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },

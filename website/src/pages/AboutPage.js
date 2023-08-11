@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import profilePic from '../photos/peter.jpeg';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -16,23 +15,23 @@ const AboutWrapper = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  width: 80px; // You can change this to suit your needs
-  height: 100px; // You can change this to suit your needs
-  border-radius: 50%; // This will make the image circular, you can remove this if you prefer a different shape
-  object-fit: cover; // This will ensure the image covers the whole area of the img element without stretching
-  margin-bottom: 20px; // Add some spacing below the image
+  width: 200px; // Increased the width
+  height: 240px; // Increased the height
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 20px; 
 `;
 
-
 const AboutPage = () => {
+  const randomImage = "https://source.unsplash.com/random?portrait";
   return (
     <AboutWrapper>
-      <ProfileImage src={profilePic} alt="Profile" />
+      <ProfileImage src={randomImage} alt="Profile" />
       <h2>About Me</h2>
       <p>
-        Hello, my name is Jake Bodin. I am majoring in Computer Science while also minoring in Econcomics 
-         at Rensselaer Polytechnic Institute, class of 2025. I am currently creating this website as apart 
-         of the RCOS prjoect group How2Website, where each of us are learning to create are own website.
+        Hello, my name is Jake Bodin. I am majoring in Computer Science and minoring in Economics
+        at Rensselaer Polytechnic Institute, class of 2025. I am currently creating this website as part
+        of the RCOS project group How2Website, where I am creating my own personal website.
       </p>
       <h3>Skills:</h3>
       <ul>

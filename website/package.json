@@ -4,19 +4,23 @@
   "homepage": "https://Jake-Bodin.github.io/PersonalWebsite",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-regular-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "ajv": "^8.12.0",
+    "browserslist": "^4.21.10",
+    "caniuse-lite": "^1.0.30001519",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.13.0",
-    "react-scripts": "^1.1.5",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.11",
+    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -46,6 +50,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^3.0.0"
   }
 }

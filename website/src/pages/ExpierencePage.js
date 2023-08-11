@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import profilePic from '../photos/starclouds.jpg';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -15,28 +14,92 @@ const AboutWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const ProfileImage = styled.img`
-  width: 100px; // You can change this to suit your needs
-  height: 100px; // You can change this to suit your needs
-  border-radius: 50%; // This will make the image circular, you can remove this if you prefer a different shape
-  object-fit: cover; // This will ensure the image covers the whole area of the img element without stretching
-  margin-bottom: 20px; // Add some spacing below the image
+const ExperienceWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; // Add this to vertically center content
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+const ExperienceItem = styled.div`
+  margin: 0 20px;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+`;
+
+const ArrowContainer = styled.div`
+  position: relative;
+  width: 60px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  :before {
+    content: "";
+    border-top: 1px solid white; // Create a line
+    width: 20px; // length of line
+    margin-right: 5px;  // Adjust spacing between line and tip
+  }
+
+  :after {
+    content: "";
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid white; // arrow pointing to the right
+  }
 `;
 
 
+
 const AboutPage = () => {
+
+  const experience = [
+    {
+      title: 'Referee',
+      company: 'USA Hockey',
+      duration: 'Jan 2018 - Dec 2019'
+    },
+    {
+      title: 'Waiter',
+      company: 'Addison Park',
+      duration: 'Jan 2018 - Dec 2019'
+    },
+    {
+      title: 'Sorter',
+      company: 'UPS',
+      duration: 'Jan 2019 - Dec 2020'
+    },
+    {
+      title: 'Internship',
+      company: 'Searching',
+      duration: 'Jan 2020 - Dec 2020'
+    },
+  ];
+
   return (
     <AboutWrapper>
-      <ProfileImage src={profilePic} alt="Profile" />
-      <h2>About Me</h2>
-      <p>
-        Expierence
-      </p>
-      <h3>Skills:</h3>
-      <ul>
-        <li>Python, C, C++, and Java</li>
-        <li>JavaScript, React, and Node.js</li>
-      </ul>
+      <h3>Experience:</h3>
+      <ExperienceWrapper>
+        {experience.map((job, index) => (
+          <React.Fragment key={index}>
+            <ExperienceItem>
+              <h4>{job.title}</h4>
+              <p>{job.company}</p>
+              <p>{job.duration}</p>
+            </ExperienceItem>
+            {index !== experience.length - 1 && <ArrowContainer />}
+          </React.Fragment>
+        ))}
+      </ExperienceWrapper>
     </AboutWrapper>
   );
 };
