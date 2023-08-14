@@ -1,6 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Arrow = styled.div`
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(90deg);
+`;
+
 const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,16 +26,6 @@ const AboutWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const ExperienceWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; // Add this to vertically center content
-  flex-wrap: wrap;
-  width: 100%;
-  margin-bottom: 20px;
-`;
-
 const ExperienceItem = styled.div`
   margin: 0 20px;
   min-width: 200px;
@@ -32,36 +34,90 @@ const ExperienceItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
-`;
+  justify-content: flex-start;
+  z-index: 1;
 
-const ArrowContainer = styled.div`
-  position: relative;
-  width: 60px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
   :before {
-    content: "";
-    border-top: 1px solid white; // Create a line
-    width: 20px; // length of line
-    margin-right: 5px;  // Adjust spacing between line and tip
+    content: '';
+    width: 2px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    top: 50%; // Centered on the timeline
+    transform: translateY(-50%); // To ensure it's centered
+    left: 50%;
+    z-index: 0;
   }
 
+  h4, p {
+    position: relative;
+    z-index: 2;
+  }
+
+  h4 {
+    margin: 20px 0 5px 0; // Adjusted top margin to avoid overlapping with the dash
+  }
+
+  p {
+    margin: 0; // Removed margin-bottom
+  }
+
+  p:first-of-type {
+    margin-top: 15px; // Added top margin to the first paragraph (company) to separate it from the dash
+  }
+`;
+
+const ExperienceWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+
+  // Main timeline
+  :before {
+    content: '';
+    width: calc(100% - 30px);
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+  }
+
+  // Tail (fletching) on the left side of the timeline
   :after {
-    content: "";
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 10px solid white; // arrow pointing to the right
+    content: '';
+    width: 2px; 
+    height: 10px; // Adjust for desired length
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 5px; // Adjust based on where you want it to be in relation to the main line
+    transform: translateY(-50%);
+  }
+
+  // Arrowhead on the right side of the timeline
+  ::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(90deg);
   }
 `;
 
 
 
 const AboutPage = () => {
-
   const experience = [
     {
       title: 'Referee',
@@ -90,18 +146,15 @@ const AboutPage = () => {
       <h3>Experience:</h3>
       <ExperienceWrapper>
         {experience.map((job, index) => (
-          <React.Fragment key={index}>
-            <ExperienceItem>
-              <h4>{job.title}</h4>
-              <p>{job.company}</p>
-              <p>{job.duration}</p>
-            </ExperienceItem>
-            {index !== experience.length - 1 && <ArrowContainer />}
-          </React.Fragment>
+          <ExperienceItem key={index}>
+            <h4>{job.title}</h4>
+            <p>{job.company}</p>
+            <p>{job.duration}</p>
+          </ExperienceItem>
         ))}
+        <Arrow /> {/* Add the arrow here */}
       </ExperienceWrapper>
     </AboutWrapper>
   );
 };
-
 export default AboutPage;

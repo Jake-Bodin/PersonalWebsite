@@ -16,7 +16,17 @@ const IconList = styled.ul`
 const IconItem = styled.li`
   font-size: 3rem; // adjust the size as you need
   padding: 1rem;   // adjust the space between icons as you need
+
+  a {
+    color: #2a2a2a; // Darker gray
+
+    &:hover {
+      color: #1a1a1a; // Even darker gray for hover effect
+    }
+  }
 `;
+
+
 
 const ContactIcons = () => (
   <IconList className="icons">

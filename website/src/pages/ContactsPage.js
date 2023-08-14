@@ -17,10 +17,21 @@ const AboutWrapper = styled.div`
 
 const ContactHeader = styled.h2`
   margin-bottom: 30px;
+  color: white; /* Add this line to set the text color to white */
 `;
 
 const EmailText = styled.p`
   margin-bottom: 20px;
+  color: white;
+
+  a {
+    color: #4d4d4d; // Dark gray
+
+    &:hover {
+      color: #333333; // Even darker gray for hover effect
+      text-decoration: underline; // Optional: underline on hover for clarity
+    }
+  }
 `;
 
 const Contact = () => (
